@@ -43,9 +43,10 @@ class App extends Component {
 
   artCard = () => {
     return this.state.resp.results.map((el, index) => {
+      const date = el.releaseDate.substring(0,4)
       const preImage = el['artworkUrl100']
-      const image = preImage.substring(0, preImage.lastIndexOf("/") + 1) + "600x600.jpg";
-      return <ArtCard image={image} key={index}></ArtCard>
+      const image = preImage.substring(0, preImage.lastIndexOf("/") + 1) + "300x300.jpg";
+      return <ArtCard date={date} image={image} key={index}></ArtCard>
     });
   }
   

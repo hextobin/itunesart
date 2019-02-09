@@ -34,3 +34,8 @@
 .search {
   padding: 30px;
 }
+
+.album-image {
+  height: 200px !important;
+  width: 200px !important;
+}
