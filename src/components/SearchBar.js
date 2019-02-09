@@ -10,17 +10,19 @@ class SearchBar extends Component {
   handleChange = (e) => {
     this.setState({ search: e.target.value})
   }
-
-  handleSubmit = () => {
+  
+  handleSubmit = (e) => {
+    e.preventDefault()
     this.props.search(this.state.search)
   }
 
   render() {
     return(
       <div className='search'>
-        Search Here &nbsp;
-        <Input onChange={this.handleChange}></Input>
-        <Button onClick={this.handleSubmit}>Go</Button>
+        <form onSubmit={this.handleSubmit}>
+        <Input placeholder='Artist and Album Search'  onChange={this.handleChange}></Input>
+        <Button className='Go' type='submit'>Go</Button>
+        </form>
       </div>
     )
   }

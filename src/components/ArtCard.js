@@ -7,8 +7,12 @@ class ArtCard extends Component {
       <div>
         <Card>
           <Card.Content>
-            <img className='album-image' src={this.props.image} alt=""/>
-            <Card.Header>{this.props.date}</Card.Header>
+            <a href={this.props.imageHQ} target='_blank'>
+              <img className='album-image' src={this.props.image} alt={this.props.albumName} />
+            </a>
+            <Card.Header>{this.props.artistName}</Card.Header>
+            <Card.Meta>{this.props.albumName}</Card.Meta>
+            <Card.Description>{this.props.date}</Card.Description>
           </Card.Content>
         </Card>
       </div>

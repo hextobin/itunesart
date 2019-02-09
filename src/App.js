@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import fetchJsonp from 'fetch-jsonp'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Container, Header } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import ArtCard from './components/ArtCard'
 import SearchBar from './components/SearchBar';
@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetchJsonp('https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=25')
+    fetchJsonp('https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=28')
       .then((response) => {
         return response.json()
       }).then((json) => {
@@ -29,7 +29,7 @@ class App extends Component {
 
   componentDidUpdate() {
     if(this.state.searching === true) {
-      fetchJsonp(`https://itunes.apple.com/search?term=${this.state.searchData}&entity=album&limit=25`)
+      fetchJsonp(`https://itunes.apple.com/search?term=${this.state.searchData}&entity=album&limit=28`)
       .then((response) => {
         return response.json()
       }).then((json) => {
@@ -46,7 +46,9 @@ class App extends Component {
       const date = el.releaseDate.substring(0,4)
       const preImage = el['artworkUrl100']
       const image = preImage.substring(0, preImage.lastIndexOf("/") + 1) + "300x300.jpg";
-      return <ArtCard date={date} image={image} key={index}></ArtCard>
+      const imageHQ = preImage.substring(0, preImage.lastIndexOf("/") + 1) + "10000x10000-999.jpg";
+      console.log(el)
+      return <ArtCard artistName={el.artistName}  albumName={el.collectionName}  imageHQ={imageHQ} date={date} image={image} key={image}></ArtCard>
     });
   }
   
@@ -56,15 +58,17 @@ class App extends Component {
 
   render() {
     return (
-
       <div className="App">
+      <Container>
+        <Header as='h1'>Search For Itunes Album Art!</Header>
         <SearchBar search={this.search} />
-        <Grid>
+        <Grid columns={4}>
         {(this.state.anyData === true) ? 
           this.artCard() :
           <div>Loading</div>
         }
         </Grid>
+        </Container>
       </div>
     );
   }
