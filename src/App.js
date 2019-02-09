@@ -24,7 +24,7 @@ class App extends Component {
 
   artCard = () => {
     return this.state.resp.results.map((el, index) => {
-      return <ArtCard key={index}></ArtCard>
+      return <ArtCard image={el['artworkUrl100']} key={index}></ArtCard>
     });
   }
   

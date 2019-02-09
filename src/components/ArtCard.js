@@ -1,13 +1,14 @@
-import { Card } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 import React, { Component } from 'react'
 
 class ArtCard extends Component {
   render(){
-    console.log('test')
     return(
       <div>
         <Card>
-          kjhjhj
+          <Card.Content>
+            <Image src={this.props.image}/>
+          </Card.Content>
         </Card>
       </div>
     )
