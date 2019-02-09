@@ -3,6 +3,8 @@ import './App.css';
 import fetchJsonp from 'fetch-jsonp'
 import 'semantic-ui-css/semantic.min.css'
 import ArtCard from './components/ArtCard'
+import SearchBar from './components/SearchBar';
+
 
 class App extends Component {
 
@@ -32,7 +34,9 @@ class App extends Component {
 
   render() {
     return (
+
       <div className="App">
+        <SearchBar></SearchBar>
         {(this.state.anyData === true) ? 
           this.artCard() :
           <div>Loading</div>
