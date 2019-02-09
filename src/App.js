@@ -47,7 +47,7 @@ class App extends Component {
       const preImage = el['artworkUrl100']
       const image = preImage.substring(0, preImage.lastIndexOf("/") + 1) + "300x300.jpg";
       const imageHQ = preImage.substring(0, preImage.lastIndexOf("/") + 1) + "10000x10000-999.jpg";
-      console.log(el)
+      // console.log(el)
       return <ArtCard artistName={el.artistName}  albumName={el.collectionName}  imageHQ={imageHQ} date={date} image={image} key={image}></ArtCard>
     });
   }

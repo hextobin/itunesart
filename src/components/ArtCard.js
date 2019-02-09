@@ -1,4 +1,4 @@
-import { Card, Image } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import React, { Component } from 'react'
 
 class ArtCard extends Component {
@@ -7,7 +7,7 @@ class ArtCard extends Component {
       <div>
         <Card>
           <Card.Content>
-            <a href={this.props.imageHQ} target='_blank'>
+            <a href={this.props.imageHQ} rel="noopener noreferrer"  target='_blank'>
               <img className='album-image' src={this.props.image} alt={this.props.albumName} />
             </a>
             <Card.Header>{this.props.artistName}</Card.Header>
