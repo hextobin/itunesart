@@ -1,7 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
 ## Search iTunes Album Art
 
 Live demo [here](https://hextobin.github.io/itunesart/).
