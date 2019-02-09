@@ -17,11 +17,10 @@ class SearchBar extends Component {
 
   render() {
     return(
-      <div>
+      <div className='search'>
         Search Here &nbsp;
         <Input onChange={this.handleChange}></Input>
         <Button onClick={this.handleSubmit}>Go</Button>
-
       </div>
     )
   }

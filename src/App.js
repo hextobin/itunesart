@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import fetchJsonp from 'fetch-jsonp'
+import { Grid } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import ArtCard from './components/ArtCard'
 import SearchBar from './components/SearchBar';
@@ -57,10 +58,12 @@ class App extends Component {
 
       <div className="App">
         <SearchBar search={this.search} />
+        <Grid>
         {(this.state.anyData === true) ? 
           this.artCard() :
           <div>Loading</div>
         }
+        </Grid>
       </div>
     );
   }
