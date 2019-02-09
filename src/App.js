@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetchJsonp('https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=28')
+    fetchJsonp('https://itunes.apple.com/search?term=deadmau5&entity=album&limit=28')
       .then((response) => {
         return response.json()
       }).then((json) => {
@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
       <Container>
-        <Header as='h1'>Search For Itunes Album Art!</Header>
+        <Header as='h1'>Search For iTunes Album Art!</Header>
         <SearchBar search={this.search} />
         <Grid columns={4}>
         {(this.state.anyData === true) ? 
