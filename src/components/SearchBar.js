@@ -12,7 +12,6 @@ class SearchBar extends Component {
   }
 
   handleSubmit = () => {
-    // still unwritten in app
     this.props.search(this.state.search)
   }
 
